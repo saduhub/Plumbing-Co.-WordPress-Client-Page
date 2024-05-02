@@ -1,0 +1,47 @@
+# Ignore configuration files that contain sensitive information
+wp-config.php
+
+# Ignore core files
+/wp-admin/
+/wp-includes/
+
+# Ignore common file types that are not part of the version-controlled source code
+*.log
+*.sql
+*.bak
+
+# Ignore the actual .htaccess file as it can contain sensitive rules
+.htaccess
+
+# Ignore node modules folder and other dependencies
+node_modules/
+vendor/
+
+# Ignore the WordPress default themes and plugins as these can be re-downloaded
+wp-content/themes/twenty*
+wp-content/plugins/hello.php
+
+# Ignore upgrade files
+wp-content/upgrade/
+
+# Ignore backups and cache files
+wp-content/backups/
+wp-content/cache/
+wp-content/debug.log
+
+# Ignore uploads as these are not typically part of the source code
+wp-content/uploads/
+
+# Additional files that are specific to the WordPress installation and not usually required
+/license.txt
+/readme.html
+/xmlrpc.php
+/wp-config-sample.php
+
+# Local environment files
+local-config.php
+/local-xdebuginfo.php
+
+# Ignore WordPress core files
+wp-*.php
+index.php
