@@ -1,0 +1,13 @@
+/*
+ Theme Name:   Plumbing Co Child Theme
+ Theme URI:    http://plumbing-co.local/
+ Description:  A child theme for the Twenty Twenty-Four theme
+ Author:       Jorge
+ Template:     twentytwentyfour
+ Version:      1.0.0
+ Text Domain:  plumbingcochildtheme 
+*/
+
+.wp-block-site-title a {
+    color: red !important;
+}
