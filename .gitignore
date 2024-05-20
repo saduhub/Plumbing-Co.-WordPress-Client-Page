@@ -45,3 +45,6 @@ local-config.php
 # Ignore WordPress core files
 wp-*.php
 index.php
+
+# Ignore any folder inside wp-content that ends with -backups
+wp-content/*-backups/
