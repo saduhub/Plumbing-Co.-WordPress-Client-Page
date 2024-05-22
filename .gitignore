@@ -48,3 +48,6 @@ index.php
 
 # Ignore any folder inside wp-content that ends with -backups
 wp-content/*-backups/
+
+# Exception for index.php inside sample-theme
+!wp-content/themes/sample-theme/index.php
