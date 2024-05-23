@@ -26,20 +26,42 @@
         if ($theParent) { 
             
     ?>
+
     <div class="metabox metabox--position-up metabox--with-home-link">
         <p><a class="metabox__blog-home-link" href="<?php echo get_permalink($theParent); ?>"><i class="fa fa-home" aria-hidden="true"></i> Back to <?php echo get_the_title($theParent); ?></a><span class="metabox__main">
         <?php the_title(); ?></span></p>
     </div>
-    
+
     <?php } ?>
 
-    <!-- <div class="page-links">
-        <h2 class="page-links__title"><a href="#">About Us</a></h2>
+    <?php
+        $testArray = get_pages(array(
+            'child_of' => get_the_ID()
+        ));
+
+        if ($theParent or $testArray) {
+
+    ?>
+
+    <div class="page-links">
+        <h2 class="page-links__title"><a href="<?php echo get_permalink($theParent); ?>"><?php echo get_the_title($theParent); ?></a></h2>
         <ul class="min-list">
-        <li class="current_page_item"><a href="#">Our History</a></li>
-        <li><a href="#">Our Goals</a></li>
+            <?php 
+                if ($theParent) {
+                    $findChildrenOf = $theParent;
+                } else {
+                    $findChildrenOf = get_the_ID();
+                }
+                // Can add additional item to array so that list order can be edited from admin menu.
+                wp_list_pages(array(
+                    'title_li' => NULL,
+                    'child_of' => $findChildrenOf
+                ));
+            ?>
         </ul>
-    </div> -->
+    </div>
+
+    <?php } ?>
 
     <div class="generic-content">
         <?php the_content(); ?>
