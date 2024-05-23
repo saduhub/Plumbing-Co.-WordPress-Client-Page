@@ -7,7 +7,7 @@
         <!-- Granular conrol over archive information displayed is below -->
         <h1 class="page-banner__title"><?php if (is_category()) { echo 'Posts in ';single_cat_title();} if(is_author()) {echo 'Posts by '; the_author();} ?></h1>
         <div class="page-banner__intro">
-        <p>News</p>
+        <p><?php the_archive_description(); ?></p>
         </div>
     </div>
 </div>
