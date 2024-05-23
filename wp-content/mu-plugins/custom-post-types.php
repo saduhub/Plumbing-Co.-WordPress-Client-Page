@@ -5,8 +5,13 @@ function custom_post_types() {
         'event',
         array(
             'public' => true,
+            'show_in_rest' => true,
             'labels' => array(
-                'name' => 'Custom Post Type'
+                'name' => 'Custom Post Type',
+                'add_new_item' => 'Add New Event',
+                'edit_item' => 'Edit Event',
+                'all_items' => 'All Custom Posts',
+                'singular_name' => 'Custom Post'
             ),
             'menu_icon' => 'dashicons-admin-generic'
         )
