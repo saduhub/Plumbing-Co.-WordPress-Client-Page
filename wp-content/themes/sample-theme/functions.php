@@ -11,6 +11,9 @@ function enqueue_main_styles() {
 add_action( 'wp_enqueue_scripts', 'enqueue_main_styles' );
 
 function theme_features() {
+    // Register menus that can be modifies from admin portal.
+    register_nav_menu('headerMenuLocation', 'Header Menu Location');
+    // Add title tag to each tab.
     add_theme_support('title-tag');
 }
 
