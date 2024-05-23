@@ -20,18 +20,3 @@ function theme_features() {
 }
 // After setup theme, call theme_features function.
 add_action('after_setup_theme', 'theme_features');
-
-function custom_post_types() {
-    register_post_type (
-        'event',
-        array(
-            'public' => true,
-            'labels' => array(
-                'name' => 'Custom Post Type'
-            ),
-            'menu_icon' => 'dashicons-admin-generic'
-        )
-    );
-}
-
-add_action('init', 'custom_post_types');
