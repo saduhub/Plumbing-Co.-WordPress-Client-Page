@@ -21,6 +21,7 @@
                 ));
             ?>
             <!-- Dynamic menu created on admin page. Hardcoding will be done for custom projects however, not themes uploaded to wordpress theme repository. -->
+            <!-- Can insert php into a tag to dynamically insert classes that correspond to highlighting text -->
             <!-- <ul>
               <li><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
               <li><a href="#">Programs</a></li>
