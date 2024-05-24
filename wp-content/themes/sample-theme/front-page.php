@@ -15,13 +15,22 @@
         <div class="full-width-split__inner">
             <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
             <?php 
-
+                $today = date('Ymd');
                 $homePageEvents = new WP_Query (array(
                     'posts_per_page' => 2,
                     'post_type' => 'event',
                     'meta_key' => 'event_date',
                     'orderby' => 'event_value_num',
                     'order' => 'ASC',
+                    'meta_query' => array(
+                      // Pass a array(s) with the specific sorting conditions.
+                      array(
+                        'key' => 'event_date',
+                        'compare' => '>=',
+                        'value' => $today,
+                        'type' => 'numeric'
+                      )
+                    )
                 ));
 
                 while ($homePageEvents->have_posts()) {
