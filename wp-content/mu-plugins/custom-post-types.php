@@ -4,7 +4,7 @@ function custom_post_types() {
     register_post_type (
         'event',
         array(
-            // Excerpt support on WP Admin panel. Spell out what parts are wanted with modern support.
+            // Excerpt support on WP Admin panel. Spell out what parts are wanted with modern support. 'custom-fields' added below alongside wp admin panel custom field creator, but plugin for custom fields will be used instead. 
             'supports' => array('title', 'editor', 'excerpt'),
             // Custom slug
             'rewrite' => array('slug'=> 'events'),
