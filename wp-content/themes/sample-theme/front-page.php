@@ -21,7 +21,7 @@
                     'post_type' => 'event',
                     'meta_key' => 'event_date',
                     'orderby' => 'event_value_num',
-                    'order' => 'ASC',
+                    'order' => 'DESC',
                     'meta_query' => array(
                       // Pass a array(s) with the specific sorting conditions.
                       array(
