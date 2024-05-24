@@ -4,9 +4,12 @@ function custom_post_types() {
     register_post_type (
         'event',
         array(
+            // Custom slug
+            'rewrite' => array('slug'=> 'events'),
+            // To show all custom posts in one page
+            'has_archive' => true,
             'public' => true,
             'show_in_rest' => true,
-            'has_archive' => true,
             'labels' => array(
                 'name' => 'Custom Post Type',
                 'add_new_item' => 'Add New Event',
