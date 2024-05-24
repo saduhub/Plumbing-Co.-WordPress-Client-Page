@@ -36,6 +36,9 @@
     }
   ?>
   <?php echo paginate_links(); ?>
+  <hr class="section-break">
+  <!-- Highlighting events tab when navigating to past events can be done by altering code in header.php. (Global 36) -->
+  <p>Past events <a href="<?php echo site_url('/past-events');?>">here</a>.</p>
 </div>
 
 <?php get_footer(); ?>
