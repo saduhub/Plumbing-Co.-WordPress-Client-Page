@@ -31,6 +31,8 @@
                     </a>
                     <div class="event-summary__content">
                         <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
+                        <!-- By adding an excerpt to the WP admin page and the corresponding PHP, the blogs and events in the main page can show a desired description instead of the first 4 words. Trim remains a fallback.(31 global) -->
+                        <!-- Excerpt support must be added to custom post types. -->
                         <p><?php echo wp_trim_words(get_the_content(), 4); ?><a href="<?php the_permalink();?>" class="nu gray">Learn more</a></p>
                     </div>
                 </div>
@@ -63,6 +65,7 @@
                     </a>
                     <div class="event-summary__content">
                         <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
+                        <!-- By adding an excerpt to the WP admin page and the corresponding PHP, the blogs and events in the main page can show a desired description instead of the first 4 words. Trim remains a fallback.(31 global) -->
                         <p><?php echo wp_trim_words(get_the_content(), 4); ?><a href="<?php the_permalink();?>" class="nu gray">Read more</a></p>
                     </div>
                 </div>
