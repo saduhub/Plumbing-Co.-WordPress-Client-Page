@@ -6,6 +6,7 @@ function custom_post_types() {
         array(
             'public' => true,
             'show_in_rest' => true,
+            'has_archive' => true,
             'labels' => array(
                 'name' => 'Custom Post Type',
                 'add_new_item' => 'Add New Event',
