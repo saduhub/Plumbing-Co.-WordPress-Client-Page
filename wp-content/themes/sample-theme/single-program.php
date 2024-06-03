@@ -19,6 +19,58 @@
                 <p><a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('program'); ?>"><i class="fa fa-home" aria-hidden="true"></i> All Programs</a><span class="metabox__main"><?php the_title(); ?></span></p>
             </div>
             <div class="generic-content"><?php the_content(); ?></div>
+
+            <?php 
+                $today = date('Ymd');
+                $homePageEvents = new WP_Query (array(
+                    'posts_per_page' => 2,
+                    'post_type' => 'event',
+                    'meta_key' => 'event_date',
+                    'orderby' => 'event_value_num',
+                    'order' => 'DESC',
+                    'meta_query' => array(
+                      array(
+                        'key' => 'event_date',
+                        'compare' => '>=',
+                        'value' => $today,
+                        'type' => 'numeric'
+                      ),
+                      array(
+                        'key' => 'related_programs',
+                        'compare' => 'LIKE',
+                        'value' => '"' . get_the_ID() . '"'
+                      ),
+                    )
+                ));
+
+                while ($homePageEvents->have_posts()) {
+                    $homePageEvents->the_post();
+            ?>
+                <div class="event-summary">
+                    <a class="event-summary__date event-summary__date t-center" href="<?php the_permalink();?>">
+                    <span class="event-summary__month">
+                      <?php 
+                        $eventDate = new DateTime(get_field('event_date'));
+                        echo $eventDate->format('M');
+                      ?>
+                    </span>
+                    <span class="event-summary__day"><?php echo $eventDate->format('d');?></span>
+                    </a>
+                    <div class="event-summary__content">
+                        <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
+                        <!-- By adding an excerpt to the WP admin page and the corresponding PHP, the blogs and events in the main page can show a desired description instead of the first 4 words. Trim remains a fallback.(31 global) -->
+                        <!-- Excerpt support must be added to custom post types. -->
+                        <p><?php echo wp_trim_words(get_the_content(), 4); ?><a href="<?php the_permalink();?>" class="nu gray">Learn more</a></p>
+                    </div>
+                </div>
+            <?php
+            
+                }
+                // Reset after making custom query.
+                // wp_reset_postdata();
+
+            ?>
+
         </div>
     <?php }
 
