@@ -24,7 +24,7 @@
             <!-- Can insert php into a tag to dynamically insert classes that correspond to highlighting text -->
             <!-- <ul>
               <li><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
-              <li><a href="#">Programs</a></li>
+              <li><a href="<?php echo site_url('/programs')?>">Programs</a></li>
               <li><a href="<?php echo site_url('/events')?>">Events</a></li>
               <li><a href="#">Campuses</a></li>
               <li><a href="<?php echo site_url('/blog')?>">Blog</a></li>

@@ -43,6 +43,9 @@
                     )
                 ));
 
+                echo '<hr class="section-break">';
+                echo '<h2 class="headline headline--medium">Upcoming Related Events</h2>';
+
                 while ($homePageEvents->have_posts()) {
                     $homePageEvents->the_post();
             ?>
