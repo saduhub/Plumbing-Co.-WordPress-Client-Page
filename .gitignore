@@ -41,6 +41,8 @@ wp-content/uploads/
 # Local environment files
 local-config.php
 /local-xdebuginfo.php
+package-lock.json
+build/
 
 # Ignore WordPress core files
 wp-*.php
