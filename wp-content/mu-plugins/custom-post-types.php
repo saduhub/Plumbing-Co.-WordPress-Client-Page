@@ -47,7 +47,7 @@ function custom_post_types() {
     register_post_type (
         'professor',
         array( 
-            'supports' => array('title', 'editor'),
+            'supports' => array('title', 'editor', 'thumbnail'),
             'rewrite' => array('slug'=> 'professors'),
             'has_archive' => true,
             'public' => true,
