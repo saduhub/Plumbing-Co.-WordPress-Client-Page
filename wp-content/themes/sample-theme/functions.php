@@ -17,6 +17,8 @@ function theme_features() {
     register_nav_menu('footerLocationTwo', 'Footer Location Two');
     // Add title tag to each tab.
     add_theme_support('title-tag');
+    // Add featured image support for blog posts (Need to add thumbnail param when registering professor post type.)
+    add_theme_support('post-thumbnails');
 }
 // After setup theme, call theme_features function.
 add_action('after_setup_theme', 'theme_features');
