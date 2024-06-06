@@ -35,18 +35,10 @@
                         )
                     )
                 ));
-        
+                // Add header for program professor.
                 if ($relatedProfessors->have_posts()) {
                     echo '<hr class="section-break">';
                 echo '<h2 class="headline headline--medium">' . get_the_title() . ' Professors</h2>';
-        
-                while($relatedProfessors->have_posts()) {
-                    $relatedProfessors->the_post(); ?>
-                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-                <?php }
-                }
-        
-                wp_reset_postdata();
                 // Query for events.
                 $today = date('Ymd');
                 $homePageEvents = new WP_Query (array(
