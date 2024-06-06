@@ -19,6 +19,9 @@ function theme_features() {
     add_theme_support('title-tag');
     // Add featured image support for blog posts (Need to add thumbnail param when registering professor post type.)
     add_theme_support('post-thumbnails');
+    // Tell WP to create different image sizes and use admin portal to specify where these get used.
+    add_image_size('professorLandscape', 400, 260, true);
+    add_image_size('professorPortrait', 480, 650, true);
 }
 // After setup theme, call theme_features function.
 add_action('after_setup_theme', 'theme_features');
