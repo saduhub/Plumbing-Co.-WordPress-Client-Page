@@ -20,8 +20,10 @@ function theme_features() {
     // Add featured image support for blog posts (Need to add thumbnail param when registering professor post type.)
     add_theme_support('post-thumbnails');
     // Tell WP to create different image sizes and use admin portal to specify where these get used.
+    // Installed WP plugin for custom cropping.
     add_image_size('professorLandscape', 400, 260, true);
     add_image_size('professorPortrait', 480, 650, true);
+    add_image_size('pageBanner', 1500, 350, true);
 }
 // After setup theme, call theme_features function.
 add_action('after_setup_theme', 'theme_features');
