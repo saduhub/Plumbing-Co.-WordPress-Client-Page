@@ -45,6 +45,8 @@
                     <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
                 <?php }
                 }
+        
+                wp_reset_postdata();
                 // Query for events.
                 $today = date('Ymd');
                 $homePageEvents = new WP_Query (array(
