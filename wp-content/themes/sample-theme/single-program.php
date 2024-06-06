@@ -39,6 +39,12 @@
                 if ($relatedProfessors->have_posts()) {
                     echo '<hr class="section-break">';
                 echo '<h2 class="headline headline--medium">' . get_the_title() . ' Professors</h2>';
+                // Display professor teaching course. 
+                while($relatedProfessors->have_posts()) {
+                    $relatedProfessors->the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                <?php }
+                }
                 // Query for events.
                 $today = date('Ymd');
                 $homePageEvents = new WP_Query (array(
