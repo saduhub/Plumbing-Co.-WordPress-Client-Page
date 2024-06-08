@@ -75,25 +75,7 @@
 
         while ($homePageEvents->have_posts()) {
             $homePageEvents->the_post();
-    ?>
-    <div class="event-summary">
-        <a class="event-summary__date event-summary__date t-center" href="<?php the_permalink();?>">
-        <span class="event-summary__month">
-            <?php 
-            $eventDate = new DateTime(get_field('event_date'));
-            echo $eventDate->format('M');
-            ?>
-        </span>
-        <span class="event-summary__day"><?php echo $eventDate->format('d');?></span>
-        </a>
-        <div class="event-summary__content">
-            <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink();?>"><?php the_title();?></a></h5>
-            <!-- By adding an excerpt to the WP admin page and the corresponding PHP, the blogs and events in the main page can show a desired description instead of the first 4 words. Trim remains a fallback.(31 global) -->
-            <!-- Excerpt support must be added to custom post types. -->
-            <p><?php echo wp_trim_words(get_the_content(), 4); ?><a href="<?php the_permalink();?>" class="nu gray">Learn more</a></p>
-        </div>
-    </div>
-    <?php
+            get_template_part('template-parts/content', 'event');
         }
         // Reset after making custom query.
         // wp_reset_postdata();
