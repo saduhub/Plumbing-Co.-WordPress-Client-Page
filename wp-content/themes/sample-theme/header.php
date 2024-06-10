@@ -24,10 +24,11 @@
             <!-- Can insert php into a tag to dynamically insert classes that correspond to highlighting text -->
             <!-- <ul>
               <li><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
-              <li><a href="<?php echo site_url('/programs')?>">Programs</a></li>
-              <li><a href="<?php echo site_url('/events')?>">Events</a></li>
+              <li><a href="<?php echo get_post_type_archive_link('/programs')?>">Programs</a></li>
+              <li><a href="<?php echo get_post_type_archive_link('/events')?>">Events</a></li>
               <li><a href="#">Campuses</a></li>
-              <li><a href="<?php echo site_url('/blog')?>">Blog</a></li>
+              <li><a href="<?php echo get_post_type_archive_link('/blog')?>">Blog</a></li>
+              <li><a href="<?php echo get_post_type_archive_link('/campuses')?>">Blog</a></li>
             </ul> -->
           </nav>
           <div class="site-header__util">
