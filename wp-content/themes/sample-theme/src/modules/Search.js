@@ -38,8 +38,14 @@ class Search {
     this.previousValue = this.searchField.val()
   }
   getResults() {
-    $.getJSON("/wp-json/wp/v2/posts?search=" + this.searchField.val(), function (posts) {
-      alert(posts[0].title.rendered)
+    // Arrow function employs to avoive chining bind method. This is meant to point to the results div and not the .getJSON method result.
+    $.getJSON("/wp-json/wp/v2/posts?search=" + this.searchField.val(), posts => {
+      this.resultsDiv.html(`
+        <h2 class="search-overlay__section-title">General Information</h2>
+        <ul class="link-list min-list">
+          ${posts.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join("")}
+        </ul>
+      `)
     })
   }
   keyPressDispatcher(e) {
