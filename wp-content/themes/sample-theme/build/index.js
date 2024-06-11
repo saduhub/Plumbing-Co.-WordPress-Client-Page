@@ -198,6 +198,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class Search {
   constructor() {
+    this.addSearchHTML();
     this.resultsDiv = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#search-overlay__results");
     this.openButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-search-trigger");
     this.closeButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".search-overlay__close");
@@ -260,6 +261,22 @@ class Search {
     this.searchOverlay.removeClass("search-overlay--active");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("body-no-scroll");
     this.isOverlayOpen = false;
+  }
+  addSearchHTML() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").append(`
+      <div class="search-overlay">
+        <div class="search-overlay__top">
+          <div class="container">
+            <i class="fa fa-search search-overlay__icon" aria-hidden="true"></i>
+            <input type="text" class="search-term" placeholder="What are you looking for?" id="search-term" autocomplete="off">
+            <i class="fa fa-window-close search-overlay__close" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="container">
+          <div id="search-overlay__results"></div>
+        </div>
+      </div>
+    `);
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Search);
