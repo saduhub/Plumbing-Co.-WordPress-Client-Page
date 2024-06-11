@@ -38,13 +38,15 @@ class Search {
     this.previousValue = this.searchField.val()
   }
   getResults() {
-    this.resultsDiv.html("Imagine real search results here...")
-    this.isSpinnerVisible = false
+    $.getJSON("/wp-json/wp/v2/posts?search=" + this.searchField.val(), function (posts) {
+      alert(posts[0].title.rendered)
+    })
   }
   keyPressDispatcher(e) {
-    if (e.keyCode == 83 && !this.isOverlayOpen) {
+    if (e.keyCode == 83 && !this.isOverlayOpen && !$("input, textarea").is(":focus")) {
       this.openOverlay()
     }
+
     if (e.keyCode == 27 && this.isOverlayOpen) {
       this.closeOverlay()
     }
