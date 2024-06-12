@@ -12,9 +12,10 @@ function universityRegisterSearch() {
 }
 
 // The code below is not valid JS (No support for associative arrays), but WP will convert PHP into JS so that the JSON can be worked with automatically.
-function universitySearchResults() {
+function universitySearchResults($data) {
   $professors = new WP_Query(array(
-    'post_type' => 'professor'
+    'post_type' => 'professor',
+    's' => sanitize_text_field($data['term'])
   ));
 
   $professorResults = array();
