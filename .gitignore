@@ -53,3 +53,6 @@ wp-content/*-backups/
 
 # Exception for index.php inside sample-theme
 !wp-content/themes/sample-theme/index.php
+
+# Ignore personal project notes
+notes.txt
