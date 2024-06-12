@@ -1,5 +1,17 @@
 <?php
 
+function university_custom_rest() {
+  // Can register several rest fields
+  // register_rest_field('page', 'authorName', array(
+  //   'get_callback' => function() {return get_the_author();}
+  // ));
+  register_rest_field('post', 'authorName', array(
+    'get_callback' => function() {return get_the_author();}
+  ));
+}
+
+add_action('rest_api_init', 'university_custom_rest');
+
 function enqueue_main_styles() {
     wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=key', NULL, '1.0', true);
     wp_enqueue_script('main_js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
