@@ -1,5 +1,7 @@
 <?php
 
+require get_theme_file_path('/inc/search-route.php');
+
 function university_custom_rest() {
   // Can register several rest fields
   // register_rest_field('page', 'authorName', array(
