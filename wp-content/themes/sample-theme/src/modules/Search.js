@@ -118,6 +118,15 @@ class Search {
     setTimeout(() => this.searchField.focus(), 301);
     this.isOverlayOpen = true;
   }
+  // openOverlay() {
+  //   this.searchOverlay.classList.add("search-overlay--active")
+  //   document.body.classList.add("body-no-scroll")
+  //   this.searchField.value = ""
+  //   setTimeout(() => this.searchField.focus(), 301)
+  //   console.log("our open method just ran!")
+  //   this.isOverlayOpen = true
+  //   return false
+  // }
   closeOverlay() {
     this.searchOverlay.removeClass("search-overlay--active")
     $("body").removeClass("body-no-scroll")
