@@ -4,6 +4,9 @@ function custom_post_types() {
     register_post_type (
         'event',
         array(
+            // Create event related permission and stops treating this custom post type as a regular post type.
+            'capability_type' => 'event',
+            'map_meta_cap' => true,
             // Excerpt support on WP Admin panel. Spell out what parts are wanted with modern support. 'custom-fields' added below alongside wp admin panel custom field creator, but plugin for custom fields will be used instead. 
             'supports' => array('title', 'editor', 'excerpt'),
             // Custom slug
@@ -67,6 +70,8 @@ function custom_post_types() {
     register_post_type (
         'campus',
         array( 
+            'capability_type' => 'event',
+            'map_meta_cap' => true,
             'supports' => array('title', 'editor', 'thumbnail'),
             'rewrite' => array('slug'=> 'campuses'),
             'has_archive' => true,
