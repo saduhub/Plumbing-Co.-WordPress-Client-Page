@@ -89,6 +89,9 @@ function custom_post_types() {
     );
 
     register_post_type('note', array(
+        // Set up permission that only apply to this port type (Subscriber create notes.)
+        'capability_type' => 'note',
+        'map_meta_cap' => true,
         'show_in_rest' => true,
         'supports' => array('title', 'editor'),
         'public' => false,
