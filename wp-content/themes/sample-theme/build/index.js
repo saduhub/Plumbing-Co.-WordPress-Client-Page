@@ -182,7 +182,7 @@ class Like {
   }
   ourClickDispatcher(e) {
     var currentLikeBox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target).closest(".like-box");
-    if (currentLikeBox.data("exists") == "yes") {
+    if (currentLikeBox.attr("data-exists") == "yes") {
       this.deleteLike(currentLikeBox);
     } else {
       this.createLike(currentLikeBox);
