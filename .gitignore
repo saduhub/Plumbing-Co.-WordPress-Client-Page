@@ -56,3 +56,4 @@ wp-content/*-backups/
 
 # Ignore personal project notes
 notes.txt
+plugins.js
