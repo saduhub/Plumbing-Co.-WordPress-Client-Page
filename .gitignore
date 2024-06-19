@@ -21,9 +21,11 @@ vendor/
 wp-content/themes/twenty*
 wp-content/plugins/*
 
-# Exception for our-first-unique-plugin folder inside the plugins folder
+# Exceptions for specific plugins
 !wp-content/plugins/our-first-unique-plugin/
 !wp-content/plugins/our-first-unique-plugin/**
+!wp-content/plugins/our-word-filter-plugin/
+!wp-content/plugins/our-word-filter-plugin/**
 
 # Ignore upgrade files
 wp-content/upgrade/
@@ -50,7 +52,9 @@ build/
 
 # Ignore WordPress core files
 wp-*.php
-index.php
+
+# Ignore root index.php, but not others
+/index.php
 
 # Ignore any folder inside wp-content that ends with -backups
 wp-content/*-backups/
