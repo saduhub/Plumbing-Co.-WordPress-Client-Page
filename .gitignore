@@ -26,6 +26,8 @@ wp-content/plugins/*
 !wp-content/plugins/our-first-unique-plugin/**
 !wp-content/plugins/our-word-filter-plugin/
 !wp-content/plugins/our-word-filter-plugin/**
+!wp-content/plugins/are-you-paying-attention/
+!wp-content/plugins/are-you-paying-attention/**
 
 # Ignore upgrade files
 wp-content/upgrade/
