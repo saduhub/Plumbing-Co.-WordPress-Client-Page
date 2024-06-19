@@ -19,7 +19,11 @@ vendor/
 
 # Ignore the WordPress default themes and plugins as these can be re-downloaded
 wp-content/themes/twenty*
-wp-content/plugins/
+wp-content/plugins/*
+
+# Exception for our-first-unique-plugin folder inside the plugins folder
+!wp-content/plugins/our-first-unique-plugin/
+!wp-content/plugins/our-first-unique-plugin/**
 
 # Ignore upgrade files
 wp-content/upgrade/
