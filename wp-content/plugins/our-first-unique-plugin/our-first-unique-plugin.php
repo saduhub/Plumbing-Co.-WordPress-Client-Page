@@ -32,7 +32,7 @@ class WordCountAndTimePlugin {
     add_settings_field('wcp_readtime', 'Read Time', array($this, 'checkboxHTML'), 'word-count-settings-page', 'wcp_first_section', array('theName' => 'wcp_readtime'));
     register_setting('wordcountplugin', 'wcp_readtime', array('sanitize_callback' => 'sanitize_text_field', 'default' => '1'));
   }
-
+  // Added additional validation.
   function sanitizeLocation($input) {
     if ($input != '0' AND $input != '1') {
       add_settings_error('wcp_location', 'wcp_location_error', 'Display location must be either beginning or end.');
