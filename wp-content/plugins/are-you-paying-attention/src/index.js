@@ -65,7 +65,7 @@ function EditComponent (props) {
         return (
           <Flex>
             <FlexBlock>
-              <TextControl value={answer} onChange={newValue => {
+              <TextControl value={answer} autoFocus={answer === undefined} onChange={newValue => {
                 const newAnswers = props.attributes.answers.concat([])
                 newAnswers[index] = newValue 
                 props.setAttributes({answers: newAnswers})
@@ -83,7 +83,7 @@ function EditComponent (props) {
         )
       })}
       <Button isPrimary onClick={() => {
-        props.setAttributes({answers: props.attributes.answers.concat([""])})
+        props.setAttributes({answers: props.attributes.answers.concat([undefined])})
       }}>Add another answer</Button>
     </div>
   )
